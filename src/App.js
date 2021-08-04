@@ -40,6 +40,7 @@ const App = () => {
 
   useEffect(() => {
     dictionaryApi();
+    // eslint-disable-next-line
   }, [word, category]);
 
   return (
