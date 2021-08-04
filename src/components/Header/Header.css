@@ -12,6 +12,7 @@
     text-transform: uppercase;
     font-family: "Montserrat", sans-serif;
     font-weight: 300;
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 900px) {

@@ -9,15 +9,20 @@ import {
 import "./Header.css";
 import { categories } from "../../data/category";
 
-const Header = ({ category, setCategory, word, setWord }) => {
+const Header = ({ category, setCategory, word, setWord, lightMode }) => {
   const darkTheme = createTheme({
     palette: {
       primary: {
-        main: "#fff",
+        main: lightMode ? "#000" : "#fff",
       },
-      type: "dark",
+      type: lightMode ? "light" : "dark",
     },
   });
+
+  const handleChange = (e) => {
+    setCategory(e.target.value);
+    setWord("");
+  };
   return (
     <div className="header">
       <span className="title">{word ? word : "My Dictionary"}</span>
@@ -33,7 +38,7 @@ const Header = ({ category, setCategory, word, setWord }) => {
           <TextField
             select
             value={category}
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={handleChange}
             label="Language"
             className="select"
           >
